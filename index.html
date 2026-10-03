@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="QuickBite - Fresh. Fast. Delicious. A sample local food menu website.">
+  <title>QuickBite | Fresh. Fast. Delicious.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="logo">🍔 QUICKBITE</a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">☰</button>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#order" class="cart-link">🛒 Orders: <span id="order-counter">0</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>QUICKBITE</h1>
+          <p class="tagline">Fresh. Fast. Delicious.</p>
+          <a href="#menu" class="btn btn-primary">View Menu</a>
+        </div>
+        <img class="hero-image" src="images/burger.jpg" alt="A freshly made QuickBite burger">
+      </div>
+    </section>
+
+    <section class="favorites container" aria-labelledby="favorites-title">
+      <h2 id="favorites-title">Popular Favorites</h2>
+      <div class="card-grid" id="favorites-grid"></div>
+    </section>
+
+    <section id="menu" class="menu-section">
+      <div class="container">
+        <h2>Our Menu</h2>
+        <div class="menu-layout">
+          <div class="menu-main">
+            <div class="controls">
+              <label for="search-input" class="visually-hidden">Search food</label>
+              <input type="search" id="search-input" placeholder="Search food...">
+              <div class="filters" id="filters" role="group" aria-label="Filter by category">
+                <button class="filter-btn active" data-category="All">All</button>
+                <button class="filter-btn" data-category="Burger">Burger</button>
+                <button class="filter-btn" data-category="Pizza">Pizza</button>
+                <button class="filter-btn" data-category="Drinks">Drinks</button>
+                <button class="filter-btn" data-category="Snacks">Snacks</button>
+              </div>
+            </div>
+            <p id="no-results" class="no-results" hidden>No food items found.</p>
+            <div class="card-grid" id="menu-grid"></div>
+          </div>
+
+          <aside id="order" class="order-panel" aria-labelledby="order-title">
+            <h3 id="order-title">Your Order</h3>
+            <p id="order-empty" class="muted">Your order is empty.</p>
+            <ul id="order-list" class="order-list"></ul>
+
+            <div class="order-total">
+              <span>Total</span>
+              <strong id="order-total">₱0</strong>
+            </div>
+            
+            <button id="place-order" class="btn btn-primary btn-block">
+              Place Order
+            </button>
+
+
+            <button id="checkout-button" class="btn btn-primary btn-block">
+             Proceed to Checkout
+            </button>
+
+            <p id="order-message" class="order-message" role="status" aria-live="polite"></p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="checkout" class="container checkout-section">
+  <h2>Checkout</h2>
+
+  <form id="checkout-form">
+
+    <div class="form-group">
+      <label for="customer-name">Full Name</label>
+      <input
+        type="text"
+        id="customer-name"
+        name="customerName"
+        placeholder="Enter your full name"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="customer-phone">Phone Number</label>
+      <input
+        type="tel"
+        id="customer-phone"
+        name="customerPhone"
+        placeholder="Enter your phone number"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="customer-address">Delivery Address</label>
+      <textarea
+        id="customer-address"
+        name="customerAddress"
+        placeholder="Enter your delivery address"
+        required
+      ></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+      Confirm Order
+    </button>
+
+  </form>
+
+  <div id="checkout-success" class="checkout-success" hidden>
+  <h3>✅ Order Confirmed!</h3>
+  <p>Thank you for your order!</p>
+
+  <div id="order-info"></div>
+
+  <div id="customer-summary"></div>
+
+  <div id="checkout-order-summary"></div>
+
+  <div class="receipt-actions">
+
+  <button id="print-receipt" class="btn btn-primary">
+    🖨️ Print Receipt
+  </button>
+
+  <button id="back-to-menu" class="btn btn-primary">
+    Back to Menu
+  </button>
+
+</div>
+
+
+</section>
+
+    <section id="about" class="container about">
+      <h2>About QuickBite</h2>
+      <p>QuickBite is a local food business serving affordable and delicious meals for students, families, and the community.</p>
+      <div class="info-grid">
+        <div class="info-box">
+          <h3>Opening Hours</h3>
+          <p><strong>Monday - Saturday</strong><br>10:00 AM - 9:00 PM</p>
+          <p><strong>Sunday</strong><br>11:00 AM - 7:00 PM</p>
+        </div>
+        <div class="info-box">
+          <h3>Location</h3>
+          <p>Bauang, La Union, Philippines</p>
+          <p class="muted">Sample information only. QuickBite is a practice project, not a registered business.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <ul class="contact-list">
+          <li>📍 <strong>Location:</strong> Bauang, La Union, Philippines</li>
+          <li>📞 <strong>Phone:</strong> +63 900 000 0000 (sample number)</li>
+          <li>📧 <strong>Email:</strong> <a href="mailto:hello@quickbite.example">hello@quickbite.example</a></li>
+          <li>📘 <strong>Facebook:</strong> <a href="#">Facebook page coming soon</a></li>
+        </ul>
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Bauang%2C+La+Union%2C+Philippines" target="_blank" rel="noopener noreferrer">View on Google Maps</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-logo">QUICKBITE</p>
+    <p>Fresh. Fast. Delicious.</p>
+    <p>© 2026 QuickBite. Practice project.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
